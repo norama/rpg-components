@@ -1,0 +1,78 @@
+$error-color: #b82d2e;
+
+.root {
+  border-radius: 6px;
+  border: 1px solid var(--muted-border-color);
+  padding: 1rem 1.5rem;
+
+  & input {
+    border-radius: 6px;
+  }
+
+  & :global(.error) {
+    font-size: 1rem;
+    color: $error-color;
+    margin-left: auto;
+    width: fit-content;
+  }
+}
+
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 1rem;
+
+  & :first-child {
+    margin-right: 2rem;
+  }
+}
+
+.button {
+  appearance: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  width: 6rem;
+  outline: none;
+  border-radius: 6px;
+  padding: 0 16px;
+  line-height: 0;
+  transition: 250ms background-color;
+  font-size: 2.5rem;
+  cursor: pointer;
+  border: none;
+  opacity: 0.9;
+  font-family: monospace;
+
+  &:not(:disabled):hover {
+    opacity: 1;
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: auto;
+  }
+}
+
+.save {
+  background-color: green;
+  color: white;
+  font-size: 2.8rem;
+}
+
+.reset {
+  background-color: transparent;
+  color: $error-color;
+  border: 1px solid transparent;
+  font-size: 2rem;
+
+  &:not(:disabled) {
+    border-color: #7c3434;
+
+    &:hover {
+      border-color: #b82d2e;
+    }
+  }
+}
